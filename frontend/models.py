@@ -7,5 +7,5 @@ class DbConnections(models.Model):
 	password = models.CharField(max_length=100)
 	servicename = models.CharField("Oracle ServiceName", max_length=100)
 
-	def __unicode(self):
-		return self.name
+	def __unicode__(self):
+		return self.conname
