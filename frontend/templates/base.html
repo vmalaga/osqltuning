@@ -5,6 +5,7 @@
 		<title>{% block title %}OSQLTUNING{% endblock %}</title>
 
 		<link rel="stylesheet" href="{% static "bootstrap/css/bootstrap.min.css" %}" />
+		<script src="{% static "css/jquery-1.10.2.min.js" %}"></script>
 		<script src="{% static "bootstrap/js/bootstrap.min.js" %}"></script>
 	</head>
 
@@ -12,7 +13,7 @@
 		<div class="navbar navbar-inverse">
 			{% block topbar %}
 			<div class="navbar-inner">
-				<a class="brand" href="#">OSQLTUNING</a>
+				<a class="brand" href="https://github.com/vmalaga/osqltuning.git" target="_blank">OSQLTUNING</a>
 				<ul class="nav">
 					<li class="active"><a href="/">Connections</a></li>
 					<li><a href="#">Querys</a></li>
@@ -20,10 +21,13 @@
 				</ul>
 				<ul class="nav pull-right">
 					<li class="dropdown">
-					<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button">{{ user.username }}<b class="caret"></b></a>
-					<ul class="dropdown-menu">
-						<li><a href="/logout">Logout</a></li>
-					</ul>
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+							<i class="icon-user icon-white"></i> {{ user.username }}
+							<b class="caret"></b>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="/logout/"><i class="icon-off"></i> Logout</a></li>
+						</ul>
 					</li>
 				</ul>
 			</div>
