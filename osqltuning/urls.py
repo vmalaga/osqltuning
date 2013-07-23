@@ -7,6 +7,9 @@ from django.conf.urls import patterns, include, url
 urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'osqltuning.views.home', name='home'),
+    url(r'^$', 'frontend.views.index_view', name='home'),
+    url(r'^accounts/login/$', 'django.contrib.auth.views.login'),
+    url(r'^logout', 'frontend.views.logout_view'),
     # url(r'^osqltuning/', include('osqltuning.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:

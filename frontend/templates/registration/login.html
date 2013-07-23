@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}OSQLTUNING LOGIN{% endblock %}
+
+{% block topbar %}
+                <div class="navbar-inner">
+                        <a class="brand">OSQLTUNING</a>
+                        <ul class="nav">
+                        </ul>   
+                </div>
+{% endblock %}
+
+{% block content %}
+
+{% if form.errors %}
+	<p>Your username and password didn't match. Please try again.</p>
+{% endif %}
+
+<div class="row">
+<div class="span3 hidden-phone"></div>
+<div class="span6" id="form-login">
+	<form class="form-horizontal well" method="post" action="{% url 'django.contrib.auth.views.login' %}">
+	{% csrf_token %}
+	<div class="control-group">
+		<div class="control-label">
+			<label>{{ form.username.label_tag }}</label>
+		</div>
+		<div class="controls">
+			<input type="text" class="input-large" id="id_username" maxlength="254" name="username">
+		</div>
+	</div>
+	<div class="control-group">
+		<div class="control-label">
+			<label>{{ form.password.label_tag }}</label>
+		</div>
+		<div class="controls">
+			<input type="password" placeholder="type your password" class="input-large" id="id_password" name="password">
+		</div>
+	</div>
+	<div class="control-group">
+		<div class="controls">
+			<button type="submit" id="submit" class="btn btn-primary button-loading" data-loading-text="Loading...">Login</button>
+			<input type="hidden" name="next" value="{{ next }}" />
+		</div>
+	</div>
+	</form>
+</div>
+
+{% endblock %}
