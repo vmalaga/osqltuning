@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- CONNECTION LIST -->
+<table border=1>
+{% for conn in connlist %}
+  <tr>
+    <td>{{ conn.conname }}</td>
+  </tr>
+{% endfor %}
+</table>
+  
+{% endblock %}
