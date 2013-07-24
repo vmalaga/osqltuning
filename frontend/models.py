@@ -1,4 +1,5 @@
 from django.db import models
+from django.forms import ModelForm
 
 class DbConnections(models.Model):
 	conname = models.CharField("Connection Name", max_length=40)
@@ -9,3 +10,8 @@ class DbConnections(models.Model):
 
 	def __unicode__(self):
 		return self.conname
+	      
+class DbConnectionsForm(ModelForm):
+    class Meta:
+        model = DbConnections
+        fields = ['conname', 'hostname', 'username','password','servicename']

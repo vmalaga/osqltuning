@@ -11,6 +11,8 @@ urlpatterns = patterns('',
     url(r'^accounts/login/$', 'django.contrib.auth.views.login'),
     url(r'^logout', 'frontend.views.logout_view'),
     url(r'^testview', 'frontend.views.test_view'),
+    url(r'^addconn', 'frontend.views.dbconnform'),
+    
     # url(r'^osqltuning/', include('osqltuning.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:

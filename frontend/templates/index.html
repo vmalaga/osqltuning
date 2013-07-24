@@ -1,87 +1,19 @@
 {% extends "base.html" %}
 
 {% block content %}
-<!--<div class="row">
-        <div class="span3">
-          <label>
-            <h3><a href="#addconnection" data-toggle="modal">New Connection</a></h3>
-	    <p>Add new server connection </p>
-          </label>
-        </div>
-        <div class="span3">
-          <label>
-            <h3><a href="/editconnection">Edit Connection</a></h3>
-	    <p>Modify a existing connection</p>
-          </label>
-        </div>
-        <div class="span3">
-          <label>
-            <h3><a href="/deleteconnection">Delete Connection</a></h3>
-	    <p>Delete existing connections</p>
-          </label>
-        </div>
-</div>-->
-
-<!-- MODAL ADDCONNECTION DIALOG -->
-<div class="modal hide" id="addconnection">
-  <div class="modal-header">
-    <a class="close" data-dismiss="modal">×</a>
-    <h3>New Oracle connection</h3>
-  </div>
-  <div class="modal-body">
-    <form class="form" method="post" action="{% url 'django.contrib.auth.views.login' %}">
-	{% csrf_token %}
-	<div class="control-group">
-	  <label class="control-label">Hostname or IP</label>
-	  <div class="controls">
-	    <input type="text" class="input-large" id="id_hostname" maxlength="254" name="hostname" placeholder="Hostname or XXX.XXX.XXX.XXX">
-	  </div>
-	</div>
-	<div class="control-group">
-		<div class="control-label">
-			<label>Username</label>
-		</div>
-		<div class="controls">
-			<input type="text" class="input-large" id="id_username" maxlength="254" name="username">
-		</div>
-	</div>
-	<div class="control-group">
-		<div class="control-label">
-			<label>Password</label>
-		</div>
-		<div class="controls">
-			<input type="password" placeholder="type your password" class="input-large" id="id_password" name="password">
-		</div>
-	</div>
-	<div class="control-group">
-		<div class="control-label">
-			<label>Service or SID</label>
-		</div>
-		<div class="controls">
-			<input type="text" class="input-large" id="id_servicename" maxlength="254" name="servicename">
-		</div>
-		
-	</div>
-    </form>
-  </div>
-  <div class="modal-footer">
-    <a href="#" class="btn">Close</a>
-    <a href="#" class="btn btn-primary">Save changes</a>
-  </div>
-</div>
 
 <!-- CONNECTION LIST TABLE -->
 <div class="well">
-<table class="table table-hover">
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Connection Name</th><th>Hostname</th><th>Username</th><th>Service Name</th>
+      <th>Connection Name</th><th>Hostname</th><th>Username</th><th>Service Name</th><th>EDIT</th>
     </tr>
   </thead>
   <tbody>
 {% for conn in connlist %}
   <tr>
-    <td>{{ conn.conname }}</td><td>{{ conn.hostname }}</td><td>{{ conn.username }}</td><td>{{ conn.servicename }}</td>
+    <td><a href="edit={{ conn.conname }}"> {{ conn.conname }} </a></td><td>{{ conn.hostname }}</td><td>{{ conn.username }}</td><td>{{ conn.servicename }}</td><td><a href="#"><i class="icon-wrench"></i></a></td>
   </tr>
 {% endfor %}
   </tbody>

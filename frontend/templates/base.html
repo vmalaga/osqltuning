@@ -10,12 +10,22 @@
 	</head>
 
 	<body>
+		<!--	NAVIGATION BAR -->
 		<div class="navbar navbar-inverse">
 			{% block topbar %}
 			<div class="navbar-inner">
 				<a class="brand" href="https://github.com/vmalaga/osqltuning.git" target="_blank">OSQLTUNING</a>
 				<ul class="nav">
-					<li class="active"><a href="/">Connections</a></li>
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+							<i class="icon-home icon-white"></i> Connections
+							<b class="caret"></b>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="/" data-toggle="modal"><i class="icon-list"></i> List Connections</a></li>
+							<li><a href="/addconn" data-toggle="modal"><i class="icon-plus"></i> Add Connection</a></li>
+						</ul>
+					</li>
 					<li><a href="#">Querys</a></li>
 					<li><a href="#">Results</a></li>
 				</ul>
@@ -33,7 +43,7 @@
 			</div>
         		{% endblock %}
 		</div>
-
+		
     		<div class="container">
 			{% block content %}{% endblock %}
 		</div>
