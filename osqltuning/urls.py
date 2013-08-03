@@ -12,6 +12,7 @@ urlpatterns = patterns('',
     url(r'^logout', 'frontend.views.logout_view'),
     url(r'^testview', 'frontend.views.test_view'),
     url(r'^addconn', 'frontend.views.dbconnform'),
+    url(r'^conn_action','frontend.views.conn_actions'),
     
     # url(r'^osqltuning/', include('osqltuning.foo.urls')),
 

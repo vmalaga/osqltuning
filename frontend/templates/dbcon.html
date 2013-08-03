@@ -16,7 +16,7 @@
 		<h3>New Oracle connection</h3>
 	</div>
 	<div class="modal-body">
-		<form class="form" method="post" action="{% url 'django.contrib.auth.views.login' %}">
+		<form class="form" method="post" action="/conn_action">
 			{% csrf_token %}
 			<div class="control-group">
 			  <label class="control-label">Hostname or IP</label>
@@ -48,12 +48,15 @@
 					<input type="text" class="input-large" id="id_servicename" maxlength="254" name="servicename">
 				</div>
 			</div>
+			<div class="modal-footer">
+			<input type="submit" class="btn" value="Test" name="action">
+			<input type="submit" class="btn-primary" value="Save" name="action">
+<!-- 			  <a href="conn/test" class="btn">Test</a> -->
+<!-- 			  <a href="conn/save" class="btn btn-primary">Save changes</a> -->
+			</div>
 		</form>
 	</div>
-	<div class="modal-footer">
-		<a href="conn/test" class="btn">Test</a>
-		<a href="conn/save" class="btn btn-primary">Save changes</a>
-	</div>
+	
 </div>
  
 {% endblock %}
