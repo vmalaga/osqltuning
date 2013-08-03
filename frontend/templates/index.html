@@ -7,13 +7,13 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>Connection Name</th><th>Hostname</th><th>Username</th><th>Service Name</th><th>EDIT</th>
+      <th>Connection Name</th><th>Hostname</th><th>Username</th><th>Service Name</th><th>ACTIONS</th>
     </tr>
   </thead>
   <tbody>
 {% for conn in connlist %}
   <tr>
-    <td><a href="edit={{ conn.conname }}"> {{ conn.conname }} </a></td><td>{{ conn.hostname }}</td><td>{{ conn.username }}</td><td>{{ conn.servicename }}</td><td><a href="#"><i class="icon-wrench"></i></a></td>
+    <td><a href="edit={{ conn.conname }}"> {{ conn.conname }} </a></td><td>{{ conn.hostname }}</td><td>{{ conn.username }}</td><td>{{ conn.servicename }}</td><td><a href="#"><i class="icon-wrench" rel="tooltip" title="Edit"></i></a>   <a href='#'><i class="icon-refresh" rel="tooltip" title="Connect"></i></a></td>
   </tr>
 {% endfor %}
   </tbody>

@@ -33,7 +33,10 @@ def dbconnform(request):
 		form = DbConnectionsForm()
 
 	return render(request, 'dbcon.html', {'form': form})
-      
+
+def dbconn(conname):
+  conname = conname
+  
 def conn_actions(request):
   hostname = request.POST['hostname']
   username = request.POST['username']
